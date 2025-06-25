@@ -1,0 +1,55 @@
+/* ========== Child Page Example Cards ========== */
+
+.card-header.bg-success {
+  background-color: #28a745 !important;
+  color: #fff;
+}
+
+.card-header.bg-primary {
+  background-color: #007bff !important;
+  color: #fff;
+}
+
+.card-header.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529;
+}
+
+.card-header.bg-danger {
+  background-color: #dc3545 !important;
+  color: #fff;
+}
+
+.card-body pre {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+}
+
+ul.list-unstyled li {
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+}
+
+ul.list-unstyled li strong {
+  font-weight: 600;
+}
+
+ul.list-unstyled li::before {
+  content: '🔹';
+  margin-right: 5px;
+}
+/* Apply only to this child page */
+h1.text-primary {
+  color: #2b2d42 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card-header.bg-success {
+  background-color: #1e7e34 !important;
+}
+
+#quizBox {
+  border: 2px dashed #28a745;
+}

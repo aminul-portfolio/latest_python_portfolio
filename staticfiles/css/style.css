@@ -1,0 +1,295 @@
+/* ========== Base Layout & Typography ========== */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h3, h5 {
+  font-weight: 600;
+}
+
+h1.display-4 {
+  font-size: 2.75rem;
+}
+
+@media (max-width: 768px) {
+  h1.display-4 {
+    font-size: 2rem;
+  }
+}
+
+/* ========== Fixed Header ========== */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Dark Mode ========== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .fixed-header {
+  background-color: #1c1c1c;
+  border-color: #444;
+}
+
+body.dark-mode .content,
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .sidebar a {
+  color: #ccc;
+}
+
+body.dark-mode .sidebar a.active,
+body.dark-mode .sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 260px;
+  background: linear-gradient(180deg, #e3f2fd, #f1f8ff);
+  color: #333;
+  overflow-y: auto;
+  transition: transform 0.3s ease, width 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.sidebar h4 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 20px;
+  padding: 16px 0;
+  font-weight: bold;
+  text-align: center;
+  color: #0077b6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h5 {
+  font-size: 15px;
+  color: #0d47a1;
+  padding: 12px 20px;
+  margin: 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sidebar h5:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+  display: block;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.sidebar-link:hover {
+  background-color: #e2e6ea;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+
+.sidebar-section button {
+  font-size: 15px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px 16px;
+  text-align: left;
+  color: #1c1c1c;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sidebar-section button:hover {
+  background-color: #dceefc;
+  padding-left: 20px;
+  border-left: 4px solid #00b4d8;
+}
+
+.sidebar-section button::before {
+  content: "📂";
+  margin-right: 10px;
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-section button[aria-expanded="true"]::before {
+  content: "📁";
+  transform: rotate(5deg);
+}
+
+/* ========== Content ========== */
+.content {
+  margin-left: 260px;
+  margin-top: 70px;
+  padding: 20px;
+}
+
+/* ========== Buttons ========== */
+.toggle-btn,
+.dark-mode-btn {
+  position: fixed;
+  top: 60px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 20px;
+  z-index: 1100;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  left: 10px;
+}
+
+.dark-mode-btn {
+  right: 10px;
+}
+
+/* ========== Other Elements ========== */
+.sidebar mark {
+  background-color: #ffc107;
+  color: #000;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+.sidebar button[aria-expanded="true"] {
+  color: #0d6efd;
+}
+
+.collapse-section.showing {
+  display: block;
+}
+
+.card {
+  transition: all 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  transform: scale(1.01);
+}
+
+/* Code blocks */
+pre {
+  background-color: #f0f2f5;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  overflow-x: auto;
+}
+
+code {
+  color: #d63384;
+}
+
+/* Lists inside examples */
+ul.list-unstyled li {
+  margin-bottom: 6px;
+}
+
+/* Quiz */
+#quizBox {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.progress {
+  height: 20px;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  font-size: 0.85rem;
+}
+
+/* Hint box */
+#hintBox {
+  font-style: italic;
+  color: #6c757d;
+}
+
+/* Final review list */
+#quizSummary ul.list-group-item {
+  border-radius: 10px;
+}
+
+/* Buttons */
+button.btn {
+  border-radius: 25px;
+}
+
+/* Success/Fail Feedback */
+.alert {
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  h1.display-4 {
+    font-size: 2rem;
+  }
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+.list-group-item.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-left: 4px solid #0056b3;
+}
